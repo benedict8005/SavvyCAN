@@ -1,0 +1,41 @@
+{
+  "enum": {
+    "GearEnum": {
+      "0": "Park",
+      "1": "Reverse",
+      "2": "Neutral",
+      "3": "Drive"
+    }
+  },
+  "file": "pcan_style.sym",
+  "messages": [
+    {
+      "extended": false,
+      "id": 256,
+      "name": "EngineData",
+      "signals": [
+        "EngineSpeed",
+        "Throttle",
+        "CoolantTemp"
+      ]
+    },
+    {
+      "extended": false,
+      "id": 416,
+      "name": "Transmission",
+      "signals": [
+        "Gear",
+        "OutputTorque"
+      ]
+    },
+    {
+      "extended": true,
+      "id": 419361024,
+      "name": "J1939Status",
+      "signals": [
+        "Pressure"
+      ]
+    }
+  ],
+  "style": "hand-written in the PCAN Symbol Editor text style, not produced by a library"
+}

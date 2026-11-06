@@ -1,0 +1,27 @@
+{
+  "high_rpm": {
+    "matching_frames": 161,
+    "segments": [
+      [
+        1.7,
+        3.3
+      ]
+    ]
+  },
+  "speed_missing": {
+    "alerts": [
+      {
+        "alert_time": 4.08,
+        "last_seen": 3.98,
+        "next_seen": 4.5
+      }
+    ]
+  },
+  "throttle_spike": {
+    "recording_from": 3.0,
+    "recording_to": 5.0,
+    "trigger_times": [
+      3.0
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+FormatVersion=6.0 // Do not edit this line!
+Title="SYM Database"
+
+
+
+{SIGNALS}
+Sig="EngineSpeed" unsigned 16 /u:"rpm" /f:0.25 /max:8000 /min:0
+Sig="Throttle" unsigned 8 /u:"%" /f:0.4 /max:100 /min:0
+Sig="CoolantTemp" unsigned 8 /u:"degC" /o:-40 /max:215 /min:-40
+Sig="Speed" unsigned 16 /u:"km/h" /f:0.01 /max:300 /min:0
+Sig="MsgCounter" unsigned 4 /max:15 /min:0
+Sig="Checksum" unsigned 8 /max:255 /min:0
+Sig="Voltage" unsigned 16 /u:"V" /f:0.1 /max:500 /min:0
+Sig="Current" signed 16 /u:"A" /f:0.1 /max:300 /min:-300
+Sig="StateOfCharge" unsigned 8 /u:"%" /f:0.5 /max:100 /min:0
+
+{SENDRECEIVE}
+["BatteryStatus"]
+ID=300h
+Len=8
+CycleTime=100
+Sig="Voltage" 0
+Sig="Current" 16
+Sig="StateOfCharge" 32
+
+["EngineData"]
+ID=100h
+Len=8
+CycleTime=10
+Sig="EngineSpeed" 0
+Sig="Throttle" 16
+Sig="CoolantTemp" 24
+
+["VehicleSpeed"]
+ID=200h
+Len=8
+CycleTime=20
+Sig="Speed" 0
+Sig="MsgCounter" 48
+Sig="Checksum" 56
+

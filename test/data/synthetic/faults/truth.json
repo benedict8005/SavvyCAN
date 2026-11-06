@@ -1,0 +1,32 @@
+{
+  "database": "../databases/a.dbc",
+  "faults": [
+    {
+      "detail": "period changes from 10 ms to 12 ms",
+      "from_s": 6.0,
+      "message": "EngineData",
+      "type": "cycle_drift"
+    },
+    {
+      "from_s": 7.0,
+      "message": "EngineData",
+      "signal": "EngineSpeed",
+      "to_s": 8.0,
+      "type": "stuck_value",
+      "value": 1500.0
+    },
+    {
+      "at_s": 3.0,
+      "message": "EngineData",
+      "signal": "Throttle",
+      "type": "spike",
+      "value": 100.0
+    },
+    {
+      "from_s": 4.0,
+      "message": "VehicleSpeed",
+      "to_s": 4.5,
+      "type": "dropout"
+    }
+  ]
+}

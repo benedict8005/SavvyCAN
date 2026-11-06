@@ -1,0 +1,11 @@
+{
+  "declared_cycle_ms": 10,
+  "frames": 1000,
+  "id": 256,
+  "interval_max_s": 0.011712,
+  "interval_mean_s": 0.009987,
+  "interval_min_s": 0.008451,
+  "interval_std_s": 0.000494,
+  "message": "EngineData",
+  "note": "intervals computed from the stored (6-decimal) timestamps; population standard deviation"
+}

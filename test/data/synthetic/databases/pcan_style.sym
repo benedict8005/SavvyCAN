@@ -1,0 +1,28 @@
+FormatVersion=6.0 // Do not edit this line!
+Title="Synthetic PCAN-style symbols"
+
+{ENUMS}
+Enum=GearEnum(0="Park", 1="Reverse", 2="Neutral", 3="Drive")
+
+{SENDRECEIVE}
+
+[EngineData]
+ID=100h
+Len=8
+CycleTime=10
+Var=EngineSpeed unsigned 0,16 /u:rpm /f:0.25 /min:0 /max:8000
+Var=Throttle unsigned 16,8 /u:% /f:0.4 /min:0 /max:100
+Var=CoolantTemp unsigned 24,8 /u:degC /o:-40 /min:-40 /max:215
+
+[Transmission]
+ID=1A0h
+Len=8
+CycleTime=20
+Var=Gear unsigned 0,3 /e:GearEnum
+Var=OutputTorque signed 8,16 /u:Nm /f:0.5
+
+[J1939Status]
+ID=18FEF100h
+Type=Extended
+Len=8
+Var=Pressure unsigned 0,16 /u:kPa /f:0.5
