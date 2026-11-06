@@ -18,7 +18,7 @@ Build the application with `qmake SavvyCAN.pro && make`.
 ## Tests
 
 - New behaviour comes with a test in `test/`, added to `test/test.pro` and `test/main.cpp`.
-- Tests use the generated data in `test/data/synthetic` and Qt's virtual CAN bus, never real hardware. Regenerate the data with `python3 test/data/make_synthetic_data.py`.
+- Tests use the generated data in `test/data/synthetic` and Qt's virtual CAN bus, never real hardware. Regenerate the data with `python3 test/data/make_synthetic_data.py`. It needs pip install python-can cantools.
 - Check results against the truth files next to the data rather than numbers worked out by hand.
 - QCanBusFrame cannot hold ids above 0x1FFFFFFF, so do not test SocketCAN flag bits through it.
 
