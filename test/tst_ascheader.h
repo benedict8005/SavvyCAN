@@ -1,3 +1,6 @@
+#ifndef TST_ASCHEADER_H
+#define TST_ASCHEADER_H
+
 #include <QtTest>
 #include <QTemporaryDir>
 #include "framefileio.h"
@@ -68,5 +71,5 @@ private slots:
         QCOMPARE(loaded.at(0).payload(), frame.payload());
     }
 };
-QTEST_MAIN(TestASCHeader)
-#include "tst_ascheader.moc"
+
+#endif // TST_ASCHEADER_H
