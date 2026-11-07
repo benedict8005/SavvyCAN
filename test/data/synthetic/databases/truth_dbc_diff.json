@@ -1,0 +1,55 @@
+{
+  "changes": [
+    {
+      "alters_decoding": true,
+      "kind": "signal_scale_changed",
+      "message": "EngineData",
+      "new": 0.5,
+      "old": 0.25,
+      "signal": "EngineSpeed"
+    },
+    {
+      "alters_decoding": true,
+      "kind": "signal_removed",
+      "message": "EngineData",
+      "signal": "Throttle"
+    },
+    {
+      "alters_decoding": false,
+      "kind": "signal_added",
+      "message": "EngineData",
+      "signal": "EngineLoad"
+    },
+    {
+      "alters_decoding": false,
+      "kind": "signal_unit_changed",
+      "message": "EngineData",
+      "new": "C",
+      "old": "degC",
+      "signal": "CoolantTemp"
+    },
+    {
+      "alters_decoding": true,
+      "kind": "signal_start_bit_changed",
+      "message": "VehicleSpeed",
+      "new": 8,
+      "old": 0,
+      "signal": "Speed"
+    },
+    {
+      "alters_decoding": true,
+      "kind": "message_id_changed",
+      "message": "BatteryStatus",
+      "new": 769,
+      "old": 768
+    },
+    {
+      "alters_decoding": false,
+      "id": 1280,
+      "kind": "message_added",
+      "message": "Diagnostics"
+    }
+  ],
+  "new": "a_changed.dbc",
+  "old": "a.dbc"
+}

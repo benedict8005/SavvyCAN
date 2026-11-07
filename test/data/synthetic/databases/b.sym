@@ -1,0 +1,26 @@
+FormatVersion=6.0 // Do not edit this line!
+Title="SYM Database"
+
+
+
+{SIGNALS}
+Sig="MotorTorque" unsigned 12 /u:"Nm" /f:0.5 /o:-1000 /max:1000 /min:-1000
+Sig="MotorTemp" unsigned 8 /u:"degC" /o:-40 /max:215 /min:-40
+Sig="CabinTemp" unsigned 8 /u:"degC" /f:0.5 /o:-20 /max:60 /min:-20
+Sig="FanLevel" unsigned 4 /max:10 /min:0
+
+{SENDRECEIVE}
+["Climate"]
+ID=600h
+Len=8
+CycleTime=500
+Sig="CabinTemp" 0
+Sig="FanLevel" 8
+
+["MotorStatus"]
+ID=100h
+Len=8
+CycleTime=10
+Sig="MotorTorque" 0
+Sig="MotorTemp" 16
+

@@ -1,0 +1,99 @@
+{
+  "answer_database": "reverse_answer.dbc (0x230 is not in it)",
+  "cycle_ms": 20,
+  "frames": 1500,
+  "messages": {
+    "0x210": {
+      "byte_order": "little_endian",
+      "checksum": {
+        "algorithm": "CRC-8 SAE J1850 (polynomial 0x1D, initial 0xFF, final xor 0xFF) over bytes 0 to 6",
+        "byte": 7
+      },
+      "name": "Powertrain2",
+      "signals": [
+        {
+          "length": 12,
+          "name": "Torque",
+          "note": "unaligned",
+          "offset": -500,
+          "scale": 0.5,
+          "start_bit": 4
+        },
+        {
+          "length": 3,
+          "name": "Gear",
+          "note": "steps at 2.5, 5.0 and 7.5 s",
+          "start_bit": 16,
+          "values": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "length": 4,
+          "name": "Counter",
+          "note": "+1 per frame, wraps at 16",
+          "start_bit": 20
+        },
+        {
+          "length": 1,
+          "name": "Flag",
+          "note": "toggles every 25 frames",
+          "start_bit": 24
+        },
+        {
+          "length": 8,
+          "name": "Temp",
+          "offset": -40,
+          "scale": 1,
+          "start_bit": 32
+        }
+      ]
+    },
+    "0x220": {
+      "checksum": {
+        "algorithm": "sum of bytes 0 to 6 modulo 256",
+        "byte": 7
+      },
+      "name": "Hydraulics",
+      "signals": [
+        {
+          "byte_order": "big_endian",
+          "length": 16,
+          "name": "Pressure",
+          "scale": 0.1,
+          "start_bit_msb": 7
+        },
+        {
+          "length": 8,
+          "name": "Temp",
+          "offset": -40,
+          "scale": 1,
+          "start_bit": 16
+        },
+        {
+          "length": 4,
+          "name": "Counter",
+          "note": "high nibble of byte 6, +1 per frame",
+          "start_bit": 52
+        }
+      ]
+    },
+    "0x230": {
+      "checksum": null,
+      "constant_bytes": {
+        "0": "0xA5",
+        "1": "0x00",
+        "4-7": "0x00"
+      },
+      "name": "unknown",
+      "noise_byte": 2,
+      "slow_toggle_byte": {
+        "byte": 3,
+        "period_frames": 50
+      }
+    }
+  }
+}

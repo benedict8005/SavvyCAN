@@ -1,0 +1,73 @@
+{
+  "channel": 1,
+  "cursors": {
+    "difference": 0.0,
+    "signal": "EngineSpeed",
+    "t1": 2.0,
+    "t2": 3.0,
+    "value_t1": 2760.75,
+    "value_t2": 2760.75
+  },
+  "derived_signal": {
+    "definition": "EngineSpeed - 2000",
+    "max": 800.0,
+    "min": -800.0
+  },
+  "note": "plot values are the decoded physical values; the same values are in truth_signals_channel1.csv",
+  "signal_stats": {
+    "Checksum": {
+      "count": 500,
+      "max": 255.0,
+      "mean": 127.958,
+      "min": 0.0
+    },
+    "CoolantTemp": {
+      "count": 1000,
+      "max": 89.0,
+      "mean": 87.372,
+      "min": 85.0
+    },
+    "Current": {
+      "count": 100,
+      "max": 40.0,
+      "mean": 8.378,
+      "min": -40.0
+    },
+    "EngineSpeed": {
+      "count": 1000,
+      "max": 2800.0,
+      "mean": 2000.0,
+      "min": 1200.0
+    },
+    "MsgCounter": {
+      "count": 500,
+      "max": 15.0,
+      "mean": 7.452,
+      "min": 0.0
+    },
+    "Speed": {
+      "count": 500,
+      "max": 90.0,
+      "mean": 63.78948,
+      "min": 30.0
+    },
+    "StateOfCharge": {
+      "count": 100,
+      "max": 80.0,
+      "mean": 77.525,
+      "min": 75.0
+    },
+    "Throttle": {
+      "count": 1000,
+      "max": 30.0,
+      "mean": 20.0,
+      "min": 10.0
+    },
+    "Voltage": {
+      "count": 100,
+      "max": 385.0,
+      "mean": 383.18,
+      "min": 380.0
+    }
+  }
+}

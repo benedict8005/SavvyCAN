@@ -1,0 +1,21 @@
+{
+  "clashes": [
+    {
+      "id": 256,
+      "names": [
+        "EngineData",
+        "MotorStatus"
+      ]
+    }
+  ],
+  "files": [
+    "a.dbc",
+    "b.sym"
+  ],
+  "unique_to_b": [
+    {
+      "id": 1536,
+      "name": "Climate"
+    }
+  ]
+}

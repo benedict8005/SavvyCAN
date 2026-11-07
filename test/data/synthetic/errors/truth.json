@@ -1,0 +1,18 @@
+{
+  "bursts": [
+    {
+      "frames": 3,
+      "start_s": 2.0
+    },
+    {
+      "frames": 1,
+      "start_s": 4.0
+    },
+    {
+      "frames": 10,
+      "start_s": 6.0
+    }
+  ],
+  "error_frames": 14,
+  "normal_frames": 800
+}

@@ -1,0 +1,70 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: 
+
+
+BO_ 256 EngineData: 8 ECU_Engine
+ SG_ EngineLoad : 32|8@1+ (0.5,0) [0|100] "%" Vector__XXX
+ SG_ CoolantTemp : 24|8@1+ (1,-40) [-40|215] "C" Vector__XXX
+ SG_ EngineSpeed : 0|16@1+ (0.5,0) [0|8000] "rpm" Vector__XXX
+
+BO_ 512 VehicleSpeed: 8 ECU_Chassis
+ SG_ Checksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ MsgCounter : 48|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ Speed : 8|16@1+ (0.01,0) [0|300] "km/h" Vector__XXX
+
+BO_ 769 BatteryStatus: 8 ECU_Battery
+ SG_ StateOfCharge : 32|8@1+ (0.5,0) [0|100] "%" Vector__XXX
+ SG_ Current : 16|16@1- (0.1,0) [-300|300] "A" Vector__XXX
+ SG_ Voltage : 0|16@1+ (0.1,0) [0|500] "V" Vector__XXX
+
+BO_ 1280 Diagnostics: 8 ECU_Engine
+ SG_ FaultCount : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+
+
+
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_ "GenMsgCycleTime" BO_ 256 10;
+BA_ "GenMsgCycleTime" BO_ 512 20;
+BA_ "GenMsgCycleTime" BO_ 769 100;
+BA_ "GenMsgCycleTime" BO_ 1280 1000;
+
+
+
+

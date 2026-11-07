@@ -1,0 +1,19 @@
+{
+  "final_counts_by_bus_and_id": {
+    "0": {
+      "0x100": 1000,
+      "0x200": 500,
+      "0x300": 100
+    },
+    "1": {
+      "0x100": 1000,
+      "0x300": 100
+    },
+    "2": {
+      "0x200": 500
+    }
+  },
+  "log": "../classic/sample.asc",
+  "note": "bus 0 is channel 1 of the ASC file, bus 1 is channel 2, bus 2 is channel 3",
+  "script": "count_by_id.js"
+}

@@ -1,0 +1,26 @@
+{
+  "database": "../databases/a.dbc",
+  "log": "../faults/faults.asc",
+  "note": "illustrative rule format; rename fields freely",
+  "rules": [
+    {
+      "action": "mark",
+      "bus": 1,
+      "name": "high_rpm",
+      "when": "EngineSpeed > 2700"
+    },
+    {
+      "action": "alert",
+      "bus": 1,
+      "name": "speed_missing",
+      "when": "no frame with ID 0x200 for 100 ms"
+    },
+    {
+      "action": "start_recording",
+      "bus": 1,
+      "duration_s": 2,
+      "name": "throttle_spike",
+      "when": "Throttle >= 99"
+    }
+  ]
+}

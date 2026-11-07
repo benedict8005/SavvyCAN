@@ -1,0 +1,187 @@
+{
+  "total_frames": 1023,
+  "transfers": [
+    {
+      "destination": 255,
+      "dtcs": [
+        {
+          "fmi": 3,
+          "occurrence": 1,
+          "spn": 110
+        },
+        {
+          "fmi": 18,
+          "occurrence": 2,
+          "spn": 157
+        },
+        {
+          "fmi": 4,
+          "occurrence": 1,
+          "spn": 3216
+        }
+      ],
+      "length": 14,
+      "mode": "bam",
+      "name": "T1",
+      "payload_hex": "04ff6e0003019d001202900c0401",
+      "pgn": 65226,
+      "source": 0,
+      "start_time": 1.0,
+      "status": "complete"
+    },
+    {
+      "destination": 255,
+      "dtcs": [
+        {
+          "fmi": 1,
+          "occurrence": 1,
+          "spn": 100
+        },
+        {
+          "fmi": 0,
+          "occurrence": 3,
+          "spn": 190
+        },
+        {
+          "fmi": 2,
+          "occurrence": 1,
+          "spn": 91
+        },
+        {
+          "fmi": 3,
+          "occurrence": 5,
+          "spn": 168
+        },
+        {
+          "fmi": 12,
+          "occurrence": 2,
+          "spn": 520
+        }
+      ],
+      "length": 22,
+      "mode": "bam",
+      "name": "T2",
+      "payload_hex": "04ff64000101be0000035b000201a800030508020c02",
+      "pgn": 65226,
+      "source": 11,
+      "start_time": 2.0,
+      "status": "complete"
+    },
+    {
+      "destination": 23,
+      "dtcs": [
+        {
+          "fmi": 3,
+          "occurrence": 1,
+          "spn": 110
+        },
+        {
+          "fmi": 18,
+          "occurrence": 2,
+          "spn": 157
+        },
+        {
+          "fmi": 4,
+          "occurrence": 1,
+          "spn": 3216
+        }
+      ],
+      "length": 14,
+      "mode": "rts",
+      "name": "T3",
+      "payload_hex": "04ff6e0003019d001202900c0401",
+      "pgn": 65226,
+      "source": 0,
+      "start_time": 3.0,
+      "status": "complete"
+    },
+    {
+      "destination": 255,
+      "dtcs": [
+        {
+          "fmi": 1,
+          "occurrence": 1,
+          "spn": 100
+        },
+        {
+          "fmi": 0,
+          "occurrence": 3,
+          "spn": 190
+        },
+        {
+          "fmi": 2,
+          "occurrence": 1,
+          "spn": 91
+        },
+        {
+          "fmi": 3,
+          "occurrence": 5,
+          "spn": 168
+        },
+        {
+          "fmi": 12,
+          "occurrence": 2,
+          "spn": 520
+        }
+      ],
+      "length": 22,
+      "mode": "bam",
+      "name": "T4",
+      "payload_hex": "04ff64000101be0000035b000201a800030508020c02",
+      "pgn": 65226,
+      "source": 0,
+      "start_time": 5.0,
+      "status": "incomplete"
+    },
+    {
+      "destination": 255,
+      "dtcs": [
+        {
+          "fmi": 1,
+          "occurrence": 1,
+          "spn": 100
+        },
+        {
+          "fmi": 0,
+          "occurrence": 3,
+          "spn": 190
+        },
+        {
+          "fmi": 2,
+          "occurrence": 1,
+          "spn": 91
+        },
+        {
+          "fmi": 3,
+          "occurrence": 5,
+          "spn": 168
+        },
+        {
+          "fmi": 12,
+          "occurrence": 2,
+          "spn": 520
+        }
+      ],
+      "length": 22,
+      "mode": "bam",
+      "name": "T5",
+      "payload_hex": "04ff64000101be0000035b000201a800030508020c02",
+      "pgn": 65226,
+      "source": 11,
+      "start_time": 6.0,
+      "status": "corrupted"
+    },
+    {
+      "destination": 23,
+      "dtcs": [],
+      "length": 14,
+      "mode": "rts",
+      "name": "T6",
+      "payload_hex": "",
+      "pgn": 65226,
+      "source": 0,
+      "start_time": 7.0,
+      "status": "aborted"
+    }
+  ]
+}

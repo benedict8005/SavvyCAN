@@ -1,0 +1,13 @@
+{
+  "encoded_data": {
+    "BatteryStatus": "D8 0E 7D 00 A0 00 00 00",
+    "EngineData": "40 1F 32 7D 00 00 00 00"
+  },
+  "expected_frames": {
+    "BatteryStatus": 20,
+    "EngineData": 200,
+    "OneShot": 1
+  },
+  "run_seconds": 2,
+  "timing_tolerance": "each cycle within 1 ms of its stated period on the virtual bus"
+}
