@@ -3,6 +3,7 @@
 #include "tst_lfqueue.h"
 #include "tst_blf.h"
 #include "tst_ascheader.h"
+#include "tst_nativecsv.h"
 
 
 int main(int argc, char** argv)
@@ -18,6 +19,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestLFQueue());
    ASSERT_TEST(new TestBLF());
    ASSERT_TEST(new TestASCHeader());
+   ASSERT_TEST(new TestNativeCSV());
 
    return status;
 }

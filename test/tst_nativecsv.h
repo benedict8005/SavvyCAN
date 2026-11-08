@@ -1,3 +1,6 @@
+#ifndef TST_NATIVECSV_H
+#define TST_NATIVECSV_H
+
 #include <QtTest>
 #include <QTemporaryDir>
 #include "framefileio.h"
@@ -98,5 +101,4 @@ private slots:
     }
 };
 
-QTEST_MAIN(TestNativeCSV)
-#include "tst_nativecsv.moc"
+#endif // TST_NATIVECSV_H

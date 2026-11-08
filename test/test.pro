@@ -27,6 +27,7 @@ HEADERS += \
     tst_lfqueue.h \
     tst_blf.h \
     tst_ascheader.h \
+    tst_nativecsv.h \
     ../blfhandler.h \
     ../framefileio.h \
     ../pcaplite.h \
