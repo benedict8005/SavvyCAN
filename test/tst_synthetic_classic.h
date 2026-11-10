@@ -45,10 +45,10 @@ private slots:
         }
         int expectedTotal = 0;
         for (const QString &channel : expected.keys()) {
-            // ASC channels count from 1; the reader numbers buses from 0.
+            // The ASC reader keeps the channel number from the file as the bus.
             int count = expected.value(channel).toInt();
             expectedTotal += count;
-            QVERIFY2(perBus.value(channel.toInt() - 1) == count,
+            QVERIFY2(perBus.value(channel.toInt()) == count,
                      qPrintable("channel " + channel));
         }
         QCOMPARE(total, expectedTotal);
