@@ -29,6 +29,7 @@ HEADERS += \
     tst_ascheader.h \
     tst_nativecsv.h \
     tst_synthetic_classic.h \
+    tst_virtualbus.h \
     ../blfhandler.h \
     ../framefileio.h \
     ../pcaplite.h \
