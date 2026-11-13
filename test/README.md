@@ -12,13 +12,13 @@ qmake <repo>/test/test.pro && make -j8
 QT_QPA_PLATFORM=offscreen ./test      # or: make check
 ```
 
-Currently included: lock-free queue, BLF, ASC header, native CSV, and the synthetic classic ASC check. New tests belong here, and in `main.cpp`, unless they need the main window.
+Currently included: lock-free queue, BLF, ASC header, native CSV, the synthetic classic ASC check, and the virtual bus test. New tests belong here, and in `main.cpp`, unless they need the main window.
 
 ## Full-application projects
 
 `cabana`, `capturepause`, `framesender`, `isotpexport`, `multiplexroundtrip`, `originalplayback` and `socketcand` each build the whole application source set with a test entry point, because they drive real windows and models. They take several minutes to compile, so they stay as separate projects and are not part of `make check`. Each has its own `README-<name>.md` with the build and run commands, and all run with `QT_QPA_PLATFORM=offscreen`.
 
-`tst_cancon.cpp` and `tst_cancon.h` are not built. They expect real hardware and will be rewritten for Qt's virtual CAN bus (wait for ConnectedState before writing) and skipped when the plugin is missing.
+The old `tst_cancon` hardware test was removed. It needed a real adapter and a constructor with arguments, so it could not run in `main.cpp`. `tst_virtualbus.h` covers sending and receiving on Qt's virtual CAN bus instead, and skips when the plugin is missing.
 
 ## Test data
 
