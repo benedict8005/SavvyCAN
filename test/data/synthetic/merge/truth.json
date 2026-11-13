@@ -1,0 +1,20 @@
+{
+  "clock_offset_s": 0.25,
+  "merged": {
+    "first_frame_of_b_in_merged_time": 0.25,
+    "frames_after_removing_duplicate_sync": 751,
+    "frames_with_both_sync_copies": 752,
+    "sync_time_in_merged_log": 1.0
+  },
+  "note": "Both logs store time from their own first frame. Recorder B started 0.25 s after recorder A. Both recorders saw the same synchronisation frame (ID 0x7FF, data AA 55 00 00 00 00 00 00): at 1.0 s in A and at 0.75 s in B.",
+  "recorder_a": {
+    "file": "recorder_a.trc",
+    "first_frame_time": 0.0,
+    "frames": 501
+  },
+  "recorder_b": {
+    "file": "recorder_b.asc",
+    "first_frame_time": 0.0,
+    "frames": 251
+  }
+}

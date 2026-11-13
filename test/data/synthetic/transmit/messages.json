@@ -1,0 +1,33 @@
+{
+  "bus": 1,
+  "database": "../databases/a.dbc",
+  "messages": [
+    {
+      "cycle_ms": 10,
+      "id": "0x100",
+      "name": "EngineData",
+      "signals": {
+        "CoolantTemp": 85.0,
+        "EngineSpeed": 2000.0,
+        "Throttle": 20.0
+      }
+    },
+    {
+      "cycle_ms": 100,
+      "id": "0x300",
+      "name": "BatteryStatus",
+      "signals": {
+        "Current": 12.5,
+        "StateOfCharge": 80.0,
+        "Voltage": 380.0
+      }
+    },
+    {
+      "data": "02 01 0C 00 00 00 00 00",
+      "id": "0x7DF",
+      "name": "OneShot",
+      "send": "once"
+    }
+  ],
+  "note": "illustrative list format; rename fields freely"
+}

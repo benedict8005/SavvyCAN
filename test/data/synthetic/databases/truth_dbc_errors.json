@@ -1,0 +1,46 @@
+{
+  "errors": [
+    {
+      "kind": "overlapping_signals",
+      "line": 11,
+      "message": "EngineData",
+      "signals": [
+        "EngineSpeed",
+        "Throttle"
+      ]
+    },
+    {
+      "id": 256,
+      "kind": "duplicate_message_id",
+      "line": 13,
+      "messages": [
+        "EngineData",
+        "DuplicateId"
+      ]
+    },
+    {
+      "kind": "zero_scale",
+      "line": 17,
+      "signal": "ZeroScale"
+    },
+    {
+      "kind": "minimum_above_maximum",
+      "line": 18,
+      "signal": "Inverted"
+    },
+    {
+      "kind": "signal_beyond_message_length",
+      "line": 19,
+      "signal": "TooLong"
+    },
+    {
+      "kind": "duplicate_signal_name",
+      "line": 23,
+      "message": "DuplicateSignal",
+      "signal": "Same"
+    }
+  ],
+  "file": "errors.dbc",
+  "total_errors": 6,
+  "valid_message": "Valid"
+}

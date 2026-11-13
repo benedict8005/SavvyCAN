@@ -1,0 +1,26 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: ECU_A
+
+BO_ 256 EngineData: 8 ECU_A
+ SG_ EngineSpeed : 0|16@1+ (0.25,0) [0|8000] "rpm" Vector__XXX
+ SG_ Throttle : 8|8@1+ (0.4,0) [0|100] "%" Vector__XXX
+
+BO_ 256 DuplicateId: 8 ECU_A
+ SG_ DupSignal : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 512 BadValues: 8 ECU_A
+ SG_ ZeroScale : 0|8@1+ (0,0) [0|255] "" Vector__XXX
+ SG_ Inverted : 8|8@1+ (1,0) [100|0] "" Vector__XXX
+ SG_ TooLong : 56|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 768 DuplicateSignal: 8 ECU_A
+ SG_ Same : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Same : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1024 Valid: 8 ECU_A
+ SG_ Level : 0|8@1+ (1,0) [0|255] "" Vector__XXX

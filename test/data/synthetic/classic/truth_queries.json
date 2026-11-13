@@ -1,0 +1,50 @@
+{
+  "by_id": {
+    "count": 100,
+    "id": 768
+  },
+  "channel": 1,
+  "cut": {
+    "end_exclusive": true,
+    "frames_by_id_channel1": {
+      "0x100": 100,
+      "0x200": 50,
+      "0x300": 10
+    },
+    "frames_total_channel1": 160,
+    "from_s": 2.0,
+    "to_s": 3.0
+  },
+  "data_pattern": {
+    "id": 768,
+    "matching_times": [
+      4.6,
+      4.7,
+      4.8,
+      4.9,
+      5.0,
+      5.1,
+      5.2,
+      5.3,
+      5.4
+    ],
+    "pattern": "0A 0F ?? ?? ?? ?? ?? ??"
+  },
+  "jump_to_time": {
+    "first_frame_index_in_channel1": 800,
+    "first_frame_index_in_file": 1600,
+    "frame_id": 256,
+    "time": 5.0
+  },
+  "signal_value": {
+    "condition": ">= 2700",
+    "matching_frames": 161,
+    "segments": [
+      [
+        1.7,
+        3.3
+      ]
+    ],
+    "signal": "EngineSpeed"
+  }
+}

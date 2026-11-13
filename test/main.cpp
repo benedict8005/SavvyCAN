@@ -2,7 +2,10 @@
 
 #include "tst_lfqueue.h"
 #include "tst_blf.h"
-#include "tst_cancon.h"
+#include "tst_ascheader.h"
+#include "tst_nativecsv.h"
+#include "tst_synthetic_classic.h"
+#include "tst_virtualbus.h"
 
 
 int main(int argc, char** argv)
@@ -17,7 +20,10 @@ int main(int argc, char** argv)
 
    ASSERT_TEST(new TestLFQueue());
    ASSERT_TEST(new TestBLF());
-   ASSERT_TEST(new TestCanCon(CANCon::SOCKETCAN, "vcan0", 1));
+   ASSERT_TEST(new TestASCHeader());
+   ASSERT_TEST(new TestNativeCSV());
+   ASSERT_TEST(new TestSyntheticClassic());
+   ASSERT_TEST(new TestVirtualBus());
 
    return status;
 }

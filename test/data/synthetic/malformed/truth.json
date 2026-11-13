@@ -1,0 +1,68 @@
+{
+  "bad_header.trc": {
+    "problem": "unknown file version and no column definition"
+  },
+  "bad_lines.asc": {
+    "bad_line_numbers": [
+      15,
+      46,
+      77,
+      108,
+      139
+    ],
+    "problems": [
+      "non-hex data",
+      "no structure",
+      "classic frame with DLC 9",
+      "missing fields",
+      "fewer data bytes than the length"
+    ],
+    "valid_frames": 200
+  },
+  "empty.log": {
+    "problem": "zero-byte file",
+    "valid_frames": 0
+  },
+  "garbage.log": {
+    "bad_line_numbers": [
+      11,
+      26,
+      41,
+      56
+    ],
+    "problems": [
+      "bad hex ID",
+      "missing '#'",
+      "missing ')'",
+      "not a frame"
+    ],
+    "valid_frames": 60
+  },
+  "header_only.asc": {
+    "problem": "header and no frames",
+    "valid_frames": 0
+  },
+  "missing_columns.csv": {
+    "bad_line_numbers": [
+      52,
+      54
+    ],
+    "problem": "no length or channel column, and short rows",
+    "valid_frames": 50
+  },
+  "out_of_order.log": {
+    "out_of_order_line_numbers": [
+      21,
+      31
+    ],
+    "valid_frames": 40
+  },
+  "truncated.blf": {
+    "problem": "file ends in the middle of an object",
+    "valid_frames": "fewer than 200, none invalid"
+  },
+  "wrong_extension.dat": {
+    "problem": "valid candump content under a misleading extension; the format must be detected from the content",
+    "valid_frames": 100
+  }
+}

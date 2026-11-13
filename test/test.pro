@@ -1,7 +1,7 @@
 QT += core gui serialbus widgets testlib serialbus
 
 
-CONFIG += c++11
+CONFIG += c++17
 
 INCLUDEPATH += ../ ../connections
 
@@ -9,14 +9,12 @@ SOURCES += \
     tst_lfqueue.cpp \
     tst_blf.cpp \
     main.cpp \
-    tst_cancon.cpp \
     ../blfhandler.cpp \
+    ../framefileio.cpp \
+    ../pcaplite.cpp \
+    ../utility.cpp \
     ../can_structs.cpp \
-    ../connections/canconfactory.cpp \
-    ../connections/canconnection.cpp \
-    ../connections/gvretserial.cpp \
-    ../connections/socketcan.cpp \
-    ../canbus.cpp
+    ../connections/canbus.cpp
 
 
 #HEADERS += \
@@ -28,12 +26,18 @@ INSTALLS += target
 HEADERS += \
     tst_lfqueue.h \
     tst_blf.h \
-    tst_cancon.h \
+    tst_ascheader.h \
+    tst_nativecsv.h \
+    tst_synthetic_classic.h \
+    tst_virtualbus.h \
     ../blfhandler.h \
+    ../framefileio.h \
+    ../pcaplite.h \
+    ../utility.h \
     ../can_structs.h \
-    ../connections/canconconst.h \
-    ../connections/canconfactory.h \
-    ../connections/canconnection.h \
-    ../connections/gvretserial.h \
-    ../connections/socketcan.h \
-    ../canbus.h
+    ../connections/canbus.h
+
+# Run the whole suite headless: make check
+check.commands = QT_QPA_PLATFORM=offscreen ./$(TARGET)
+check.depends = $(TARGET)
+QMAKE_EXTRA_TARGETS += check
