@@ -14,7 +14,8 @@ SOURCES += \
     ../pcaplite.cpp \
     ../utility.cpp \
     ../can_structs.cpp \
-    ../connections/canbus.cpp
+    ../connections/canbus.cpp \
+    ../ingest/logformat.cpp
 
 
 #HEADERS += \
@@ -30,6 +31,8 @@ HEADERS += \
     tst_nativecsv.h \
     tst_synthetic_classic.h \
     tst_virtualbus.h \
+    tst_logformat.h \
+    ../ingest/logformat.h \
     ../blfhandler.h \
     ../framefileio.h \
     ../pcaplite.h \

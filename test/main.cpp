@@ -6,6 +6,7 @@
 #include "tst_nativecsv.h"
 #include "tst_synthetic_classic.h"
 #include "tst_virtualbus.h"
+#include "tst_logformat.h"
 
 
 int main(int argc, char** argv)
@@ -24,6 +25,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestNativeCSV());
    ASSERT_TEST(new TestSyntheticClassic());
    ASSERT_TEST(new TestVirtualBus());
+   ASSERT_TEST(new TestLogFormat());
 
    return status;
 }
