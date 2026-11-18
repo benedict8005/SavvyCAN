@@ -7,6 +7,7 @@
 #include "tst_synthetic_classic.h"
 #include "tst_virtualbus.h"
 #include "tst_logformat.h"
+#include "tst_candumpparser.h"
 
 
 int main(int argc, char** argv)
@@ -26,6 +27,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestSyntheticClassic());
    ASSERT_TEST(new TestVirtualBus());
    ASSERT_TEST(new TestLogFormat());
+   ASSERT_TEST(new TestCandumpParser());
 
    return status;
 }
