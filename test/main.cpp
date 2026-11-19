@@ -8,6 +8,7 @@
 #include "tst_virtualbus.h"
 #include "tst_logformat.h"
 #include "tst_candumpparser.h"
+#include "tst_ascparser.h"
 
 
 int main(int argc, char** argv)
@@ -28,6 +29,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestVirtualBus());
    ASSERT_TEST(new TestLogFormat());
    ASSERT_TEST(new TestCandumpParser());
+   ASSERT_TEST(new TestAscParser());
 
    return status;
 }

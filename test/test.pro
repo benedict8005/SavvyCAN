@@ -16,7 +16,8 @@ SOURCES += \
     ../can_structs.cpp \
     ../connections/canbus.cpp \
     ../ingest/logformat.cpp \
-    ../ingest/candumpparser.cpp
+    ../ingest/candumpparser.cpp \
+    ../ingest/ascparser.cpp
 
 
 #HEADERS += \
@@ -34,8 +35,10 @@ HEADERS += \
     tst_virtualbus.h \
     tst_logformat.h \
     tst_candumpparser.h \
+    tst_ascparser.h \
     ../ingest/logformat.h \
     ../ingest/candumpparser.h \
+    ../ingest/ascparser.h \
     ../blfhandler.h \
     ../framefileio.h \
     ../pcaplite.h \
