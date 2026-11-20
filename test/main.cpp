@@ -9,6 +9,7 @@
 #include "tst_logformat.h"
 #include "tst_candumpparser.h"
 #include "tst_ascparser.h"
+#include "tst_trcparser.h"
 
 
 int main(int argc, char** argv)
@@ -30,6 +31,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestLogFormat());
    ASSERT_TEST(new TestCandumpParser());
    ASSERT_TEST(new TestAscParser());
+   ASSERT_TEST(new TestTrcParser());
 
    return status;
 }
