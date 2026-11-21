@@ -18,7 +18,8 @@ SOURCES += \
     ../ingest/logformat.cpp \
     ../ingest/candumpparser.cpp \
     ../ingest/ascparser.cpp \
-    ../ingest/trcparser.cpp
+    ../ingest/trcparser.cpp \
+    ../ingest/csvparser.cpp
 
 
 #HEADERS += \
@@ -38,10 +39,12 @@ HEADERS += \
     tst_candumpparser.h \
     tst_ascparser.h \
     tst_trcparser.h \
+    tst_csvparser.h \
     ../ingest/logformat.h \
     ../ingest/candumpparser.h \
     ../ingest/ascparser.h \
     ../ingest/trcparser.h \
+    ../ingest/csvparser.h \
     ../blfhandler.h \
     ../framefileio.h \
     ../pcaplite.h \

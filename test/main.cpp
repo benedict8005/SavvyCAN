@@ -10,6 +10,7 @@
 #include "tst_candumpparser.h"
 #include "tst_ascparser.h"
 #include "tst_trcparser.h"
+#include "tst_csvparser.h"
 
 
 int main(int argc, char** argv)
@@ -32,6 +33,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestCandumpParser());
    ASSERT_TEST(new TestAscParser());
    ASSERT_TEST(new TestTrcParser());
+   ASSERT_TEST(new TestCsvParser());
 
    return status;
 }
