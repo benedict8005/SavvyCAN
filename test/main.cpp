@@ -11,6 +11,7 @@
 #include "tst_ascparser.h"
 #include "tst_trcparser.h"
 #include "tst_csvparser.h"
+#include "tst_gvretparser.h"
 
 
 int main(int argc, char** argv)
@@ -34,6 +35,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestAscParser());
    ASSERT_TEST(new TestTrcParser());
    ASSERT_TEST(new TestCsvParser());
+   ASSERT_TEST(new TestGvretParser());
 
    return status;
 }
