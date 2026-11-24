@@ -13,6 +13,7 @@
 #include "tst_csvparser.h"
 #include "tst_gvretparser.h"
 #include "tst_legacybus.h"
+#include "tst_logreader.h"
 
 
 int main(int argc, char** argv)
@@ -38,6 +39,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestCsvParser());
    ASSERT_TEST(new TestGvretParser());
    ASSERT_TEST(new TestLegacyBus());
+   ASSERT_TEST(new TestLogReader());
 
    return status;
 }

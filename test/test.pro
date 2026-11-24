@@ -20,7 +20,8 @@ SOURCES += \
     ../ingest/ascparser.cpp \
     ../ingest/trcparser.cpp \
     ../ingest/csvparser.cpp \
-    ../ingest/gvretparser.cpp
+    ../ingest/gvretparser.cpp \
+    ../ingest/logreader.cpp
 
 
 #HEADERS += \
@@ -43,12 +44,14 @@ HEADERS += \
     tst_csvparser.h \
     tst_gvretparser.h \
     tst_legacybus.h \
+    tst_logreader.h \
     ../ingest/logformat.h \
     ../ingest/candumpparser.h \
     ../ingest/ascparser.h \
     ../ingest/trcparser.h \
     ../ingest/csvparser.h \
     ../ingest/gvretparser.h \
+    ../ingest/logreader.h \
     ../blfhandler.h \
     ../framefileio.h \
     ../pcaplite.h \
