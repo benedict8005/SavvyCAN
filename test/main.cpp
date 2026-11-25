@@ -14,6 +14,7 @@
 #include "tst_gvretparser.h"
 #include "tst_legacybus.h"
 #include "tst_logreader.h"
+#include "tst_largelog.h"
 
 
 int main(int argc, char** argv)
@@ -40,6 +41,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestGvretParser());
    ASSERT_TEST(new TestLegacyBus());
    ASSERT_TEST(new TestLogReader());
+   ASSERT_TEST(new TestLargeLog());
 
    return status;
 }

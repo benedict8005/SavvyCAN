@@ -143,13 +143,14 @@ Result parseData(const QByteArray &content)
 {
     Result result;
     result.opened = true;
+    result.frames.reserve(content.count('\n')); // one frame per line at most, avoids regrowing
     int lineNumber = 0;
     int pos = 0;
     while (pos < content.size())
     {
         int end = content.indexOf('\n', pos);
         if (end < 0) end = content.size();
-        const QByteArray line = content.mid(pos, end - pos);
+        const QByteArray line = QByteArray::fromRawData(content.constData() + pos, end - pos);
         pos = end + 1;
         lineNumber++;
 

@@ -26,19 +26,22 @@ Result parseData(const QByteArray &content)
 {
     Result result;
     result.opened = true;
+    result.frames.reserve(content.count('\n')); // one frame per line at most, avoids regrowing
 
     QByteArray version;
     int versionLine = 0;
     QList<QByteArray> columns;
+    int columnIndex[256]; // position of each column letter, -1 when the file has none
     bool headerChecked = false;
     int lineNumber = 0;
     int pos = 0;
+    for (int &index : columnIndex) index = -1;
 
     while (pos < content.size())
     {
         int end = content.indexOf('\n', pos);
         if (end < 0) end = content.size();
-        const QByteArray line = content.mid(pos, end - pos).trimmed();
+        const QByteArray line = QByteArray::fromRawData(content.constData() + pos, end - pos).trimmed();
         pos = end + 1;
         lineNumber++;
         if (line.isEmpty()) continue;
@@ -53,6 +56,10 @@ Result parseData(const QByteArray &content)
             else if (line.startsWith(";$COLUMNS="))
             {
                 columns = line.mid(10).trimmed().split(',');
+                for (int &index : columnIndex) index = -1;
+                for (int i = 0; i < columns.size(); i++)
+                    if (columns[i].size() == 1 && columnIndex[uchar(columns[i][0])] < 0)
+                        columnIndex[uchar(columns[i][0])] = i;
             }
             continue;
         }
@@ -78,12 +85,11 @@ Result parseData(const QByteArray &content)
 
         const QList<QByteArray> tokens = line.simplified().split(' ');
         auto column = [&](char name) -> QByteArray {
-            for (int i = 0; i < columns.size(); i++)
-                if (columns[i] == QByteArray(1, name) && i < tokens.size()) return tokens[i];
-            return QByteArray();
+            const int i = columnIndex[uchar(name)];
+            return (i >= 0 && i < tokens.size()) ? tokens[i] : QByteArray();
         };
         // the data column is last and runs to the end of the line
-        const int dataIndex = columns.indexOf("D");
+        const int dataIndex = columnIndex[uchar('D')];
 
         if (tokens.size() < columns.size() - 1)
         {

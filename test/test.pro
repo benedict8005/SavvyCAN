@@ -45,6 +45,7 @@ HEADERS += \
     tst_gvretparser.h \
     tst_legacybus.h \
     tst_logreader.h \
+    tst_largelog.h \
     ../ingest/logformat.h \
     ../ingest/candumpparser.h \
     ../ingest/ascparser.h \
