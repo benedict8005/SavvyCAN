@@ -69,6 +69,40 @@ class TestLargeLog : public QObject
         f.write(chunk);
     }
 
+    static void writeCsv(const QString &path, int count)
+    {
+        QFile f(path);
+        QVERIFY(f.open(QIODevice::WriteOnly));
+        f.write("time,id,extended,bus,data\n");
+        QByteArray chunk;
+        for (int i = 0; i < count; i++)
+        {
+            chunk += QByteArray::number(i / 1000.0, 'f', 3) + ','
+                + QByteArray::number(0x100 + (i % 16), 16).toUpper() + ",0,"
+                + QByteArray::number(i % 3) + ','
+                + QByteArray::number(i & 0xFF, 16).rightJustified(2, '0').toUpper() + "AA55\n";
+            if (chunk.size() > (1 << 20)) { f.write(chunk); chunk.clear(); }
+        }
+        f.write(chunk);
+    }
+
+    static void writeGvret(const QString &path, int count)
+    {
+        QFile f(path);
+        QVERIFY(f.open(QIODevice::WriteOnly));
+        f.write("Time Stamp,ID,Extended,Dir,Bus,LEN,D1,D2,D3,D4,D5,D6,D7,D8\n");
+        QByteArray chunk;
+        for (int i = 0; i < count; i++)
+        {
+            chunk += QByteArray::number(qint64(i) * 1000) + ','
+                + QByteArray::number(0x100 + (i % 16), 16).toUpper().rightJustified(8, '0') + ",false,Rx,"
+                + QByteArray::number(i % 3) + ",4,"
+                + QByteArray::number(i & 0xFF, 16).rightJustified(2, '0').toUpper() + ",AA,55,00,\n";
+            if (chunk.size() > (1 << 20)) { f.write(chunk); chunk.clear(); }
+        }
+        f.write(chunk);
+    }
+
     static void checkBig(const LogReader::Result &r, LogFormat::Format format, int count, qint64 ms, int tailLen)
     {
         qInfo() << LogFormat::name(format) << count << "frames read in" << ms << "ms";
@@ -128,6 +162,30 @@ private slots:
         QCOMPARE(r.frames.last().bus, (count - 1) % 3);
         QCOMPARE(r.frames.last().payload().toHex().toUpper(), QByteArray("7FAA55"));
         QVERIFY2(ms < 5000, qPrintable(QString("took %1 ms").arg(ms)));
+    }
+
+    void twoMillionCsvFramesLoadInAFewSeconds()
+    {
+        QTemporaryDir dir;
+        QVERIFY(dir.isValid());
+        const QString path = dir.filePath("big.csv");
+        writeCsv(path, 2000000);
+        QElapsedTimer timer; timer.start();
+        const LogReader::Result r = LogReader::readFile(path);
+        checkBig(r, LogFormat::GenericCsv, 2000000, timer.elapsed(), 3);
+        QCOMPARE(r.frames.last().bus, (2000000 - 1) % 3);
+    }
+
+    void twoMillionGvretFramesLoadInAFewSeconds()
+    {
+        QTemporaryDir dir;
+        QVERIFY(dir.isValid());
+        const QString path = dir.filePath("big_gvret.csv");
+        writeGvret(path, 2000000);
+        QElapsedTimer timer; timer.start();
+        const LogReader::Result r = LogReader::readFile(path);
+        checkBig(r, LogFormat::GvretCsv, 2000000, timer.elapsed(), 4);
+        QCOMPARE(r.frames.last().bus, (2000000 - 1) % 3);
     }
 };
 
