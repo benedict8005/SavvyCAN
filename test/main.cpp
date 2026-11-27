@@ -15,6 +15,7 @@
 #include "tst_legacybus.h"
 #include "tst_logreader.h"
 #include "tst_largelog.h"
+#include "tst_loaderformat.h"
 
 
 int main(int argc, char** argv)
@@ -42,6 +43,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestLegacyBus());
    ASSERT_TEST(new TestLogReader());
    ASSERT_TEST(new TestLargeLog());
+   ASSERT_TEST(new TestLoaderFormat());
 
    return status;
 }

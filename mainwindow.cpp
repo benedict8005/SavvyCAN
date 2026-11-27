@@ -1167,6 +1167,8 @@ void MainWindow::handleLoadFile()
         model->clearFrames();
         model->insertFrames(tempFrames);
         loadedFileName = filename;
+        if (!FrameFileIO::lastFormatMessage().isEmpty())
+            ui->statusBar->showMessage(FrameFileIO::lastFormatMessage(), 8000);
         model->recalcOverwrite();
         ui->lbNumFrames->setText(QString::number(model->rowCount()));
         if (ui->cbAutoScroll->isChecked()) ui->canFramesView->scrollToBottom();
@@ -1210,6 +1212,8 @@ void MainWindow::handleDroppedFile(const QString &filename)
         ui->canFramesView->scrollToTop();
         model->clearFrames();
         model->insertFrames(loadedFrames);
+        const QString formatMessage = FrameFileIO::detectedFormatMessage(filename);
+        if (!formatMessage.isEmpty()) ui->statusBar->showMessage(formatMessage, 8000);
         loadedFileName = filename;
         model->recalcOverwrite();
         ui->lbNumFrames->setText(QString::number(model->rowCount()));

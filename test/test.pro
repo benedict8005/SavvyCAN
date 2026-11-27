@@ -38,6 +38,7 @@ HEADERS += \
     tst_synthetic_classic.h \
     tst_virtualbus.h \
     tst_logformat.h \
+    tst_loaderformat.h \
     tst_candumpparser.h \
     tst_ascparser.h \
     tst_trcparser.h \
