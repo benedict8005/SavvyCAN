@@ -27,6 +27,12 @@ public:
     //The QVector is used as either the target for loading or the source for saving.
     //These routines call the below loading/saving functions so no need to use them directly if you don't want.
     static bool loadFrameFile(QString &, QVector<CANFrame>*);
+
+    //Looks at the content of a file (never its extension) and returns "Found format: Vector ASC" and the like,
+    //or an empty string when the content is not one of the formats LogFormat knows.
+    static QString detectedFormatMessage(const QString &filename);
+    //The message for the file most recently picked in loadFrameFile(), empty if none or not recognised.
+    static QString lastFormatMessage();
     static bool saveFrameFile(QString &, const QVector<CANFrame>*);
 
     //These do the actual loading and saving and can be used directly if you'd prefer

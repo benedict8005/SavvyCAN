@@ -12,6 +12,7 @@
 
 #include "utility.h"
 #include "blfhandler.h"
+#include "ingest/logformat.h"
 
 QFile FrameFileIO::continuousFile;
 
@@ -158,6 +159,20 @@ bool FrameFileIO::saveFrameFile(QString &fileName, const QVector<CANFrame>* fram
     return false;
 }
 
+static QString lastFormatMessageText;
+
+QString FrameFileIO::lastFormatMessage()
+{
+    return lastFormatMessageText;
+}
+
+QString FrameFileIO::detectedFormatMessage(const QString &filename)
+{
+    const LogFormat::Format format = LogFormat::detectFile(filename);
+    if (format == LogFormat::Unknown) return QString();
+    return QObject::tr("Found format: %1").arg(LogFormat::name(format));
+}
+
 bool FrameFileIO::loadFrameFile(QString &fileName, QVector<CANFrame>* frameCache)
 {
     QString filename;
@@ -201,6 +216,7 @@ bool FrameFileIO::loadFrameFile(QString &fileName, QVector<CANFrame>* frameCache
     if (dialog.exec() == QDialog::Accepted)
     {
         filename = dialog.selectedFiles()[0];
+        lastFormatMessageText = detectedFormatMessage(filename);
         QString selectedNameFilter = dialog.selectedNameFilter();
 
         QProgressDialog progress(qApp->activeWindow());

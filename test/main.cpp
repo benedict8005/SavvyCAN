@@ -6,6 +6,16 @@
 #include "tst_nativecsv.h"
 #include "tst_synthetic_classic.h"
 #include "tst_virtualbus.h"
+#include "tst_logformat.h"
+#include "tst_candumpparser.h"
+#include "tst_ascparser.h"
+#include "tst_trcparser.h"
+#include "tst_csvparser.h"
+#include "tst_gvretparser.h"
+#include "tst_legacybus.h"
+#include "tst_logreader.h"
+#include "tst_largelog.h"
+#include "tst_loaderformat.h"
 
 
 int main(int argc, char** argv)
@@ -24,6 +34,16 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TestNativeCSV());
    ASSERT_TEST(new TestSyntheticClassic());
    ASSERT_TEST(new TestVirtualBus());
+   ASSERT_TEST(new TestLogFormat());
+   ASSERT_TEST(new TestCandumpParser());
+   ASSERT_TEST(new TestAscParser());
+   ASSERT_TEST(new TestTrcParser());
+   ASSERT_TEST(new TestCsvParser());
+   ASSERT_TEST(new TestGvretParser());
+   ASSERT_TEST(new TestLegacyBus());
+   ASSERT_TEST(new TestLogReader());
+   ASSERT_TEST(new TestLargeLog());
+   ASSERT_TEST(new TestLoaderFormat());
 
    return status;
 }

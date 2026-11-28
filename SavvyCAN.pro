@@ -70,6 +70,7 @@ SOURCES += main.cpp\
     candatagrid.cpp \
     framesenderwindow.cpp \
     framefileio.cpp \
+    ingest/logformat.cpp \
     mainsettingsdialog.cpp \
     scriptingwindow.cpp \
     scriptcontainer.cpp \
@@ -164,6 +165,7 @@ HEADERS  += mainwindow.h \
     framesenderwindow.h \
     can_trigger_structs.h \
     framefileio.h \
+    ingest/logformat.h \
     config.h \
     mainsettingsdialog.h \
     scriptingwindow.h \
