@@ -79,6 +79,27 @@ private slots:
         QVERIFY(r.frames.size() < 200); // truth.json: fewer than 200
     }
 
+    void problemSummaryListsLinesAndReasons()
+    {
+        const LogReader::Result r = LogReader::readFile(data("malformed/bad_lines.asc"));
+        // reasons come from the malformed/truth.json entry for this file
+        QCOMPARE(r.problemSummary(),
+                 QString("5 problems: line 15: non-hex data; line 46: no structure; "
+                         "line 77: classic frame with DLC 9; line 108: missing fields; "
+                         "line 139: fewer data bytes than the length"));
+        const QString shortened = r.problemSummary(2);
+        QVERIFY2(shortened.endsWith("line 46: no structure; and 3 more"), qPrintable(shortened));
+        QVERIFY(!shortened.contains("line 77"));
+    }
+
+    void problemSummaryForDamagedBlfAndCleanFile()
+    {
+        const LogReader::Result b = LogReader::readFile(data("malformed/truncated.blf"));
+        QVERIFY(b.problemSummary().startsWith("1 problem: "));
+        QVERIFY(!b.problemSummary().contains("line"));
+        QVERIFY(LogReader::readFile(data("classic/sample.asc")).problemSummary().isEmpty());
+    }
+
     void emptyAndMissingFiles()
     {
         const LogReader::Result e = LogReader::readFile(data("malformed/empty.log"));

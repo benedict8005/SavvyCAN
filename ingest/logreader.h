@@ -31,6 +31,11 @@ namespace LogReader
 
         // "Found format: Vector ASC", or "Unknown log format" when nothing matched
         QString formatMessage() const;
+
+        // Text for the user about what could not be read, e.g.
+        // "3 problems: line 15: non-hex data; line 46: no structure; line 77: missing fields".
+        // At most maxShown problems are listed, then "and N more". Empty when there are none.
+        QString problemSummary(int maxShown = 5) const;
     };
 
     Result readFile(const QString &path);

@@ -1,5 +1,6 @@
 #include "logreader.h"
 #include <QFile>
+#include <QStringList>
 #include "ascparser.h"
 #include "blfhandler.h"
 #include "candumpparser.h"
@@ -13,6 +14,24 @@ namespace LogReader
     {
         if (!recognised) return QStringLiteral("Unknown log format");
         return QStringLiteral("Found format: ") + LogFormat::name(format);
+    }
+
+    QString Result::problemSummary(int maxShown) const
+    {
+        if (problems.isEmpty()) return QString();
+        QStringList parts;
+        const int shown = qMin(int(problems.size()), qMax(maxShown, 1));
+        for (int i = 0; i < shown; i++)
+        {
+            const Problem &p = problems[i];
+            parts << (p.line > 0 ? QStringLiteral("line %1: %2").arg(p.line).arg(p.message)
+                                 : p.message);
+        }
+        QString text = QStringLiteral("%1 %2: ").arg(problems.size())
+                           .arg(problems.size() == 1 ? "problem" : "problems") + parts.join("; ");
+        if (problems.size() > shown)
+            text += QStringLiteral("; and %1 more").arg(problems.size() - shown);
+        return text;
     }
 
     template <class R>
